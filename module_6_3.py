@@ -2,25 +2,24 @@
 module_6_3
 """
 class Horse():
-    def __init__(self):
-        self.x_distance = 0
+    def __init__(self, x_distance=0, y_distance=0):
+        self.x_distance = x_distance
         self.sound = 'Frrr'
+        super().__init__(y_distance)
 
     def run(self, dx):
         self.x_distance += dx
-
 class Eagle():
-    def __init__(self):
-        self.y_distance = 0
+    def __init__(self, y_distance=0):
+        self.y_distance = y_distance
         self.sound = 'I train, eat, sleep, and repeat'
 
     def fly(self, dy):
         self.y_distance += dy
 
 class Pegasus(Horse, Eagle):
-    def __init__(self):
-        Horse.__init__(self)
-        Eagle.__init__(self)
+    def __init__(self, x_distance=0, y_distance=0):
+        super().__init__(x_distance, y_distance)
 
     def move(self, dx, dy):
         super().run(dx)
