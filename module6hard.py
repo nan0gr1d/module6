@@ -147,60 +147,6 @@ class Cube(Figure):
         return super().get_sides()[0] ** 3
 
 
-"""
-t1 = Triangle(3, 4, 5)
-print(t1.get_sides())
-print(t1.get_square())
-
-k1 = Cube(4)
-print(k1.get_sides())
-print(k1.get_volume())
-
-c1 = Circle(22)
-print(c1.get_sides())
-print(c1.get_square())
-
-ff4 = Figure(4)
-#print(ff)
-ff4.set_sides(3, 4, 5, 6)
-print(ff4.get_sides())
-
-ff8 = Figure(8)
-ff8.set_sides(3, 4, 5, 6, 30, 40, 50, 60)
-print(ff8.get_sides())
-
-ff.chk_clr(1, 2, 3)
-ff.chk_clr(-1, 2, 3)
-ff.chk_clr(1, 256, 3)
-ff.chk_clr(1, 2, 3.5)
-
-ff.set_color(0, 128, 255)
-print(ff.get_color())
-ff.set_color(0, 128, 256)
-print(ff.get_color())
-
-    def chk_clr(self, r, g, b):
-        ss = f"colors {r} {g} {b}"
-        if Figure.__is_valid_color(r, g, b):
-            print(ss, '- ok')
-        else:
-            print(ss, '- bad')
-
-    def set_sides(self, *new_sides):
-        super().set_sides(*new_sides)
-        self.__radius = self.__sides[0] / (2 * pi)
-
-ВАЖНО!
-При создании объектов делайте проверку на количество переданных сторон, если сторон не ровно sides_count, 
-то создать массив с единичными сторонами и в том кол-ве, которое требует фигура.
-Пример 1: Circle((200, 200, 100), 10, 15, 6), т.к. сторона у круга всего 1, то его стороны будут - [1]
-Пример 2: Triangle((200, 200, 100), 10, 6), т.к. сторон у треугольника 3, то его стороны будут - [1, 1, 1]
-Пример 3: Cube((200, 200, 100), 9), т.к. сторон(рёбер) у куба - 12, то его стороны будут - [9, 9, 9, ....., 9] (12)
-Пример 4: Cube((200, 200, 100), 9, 12), т.к. сторон(рёбер) у куба - 12, то его стороны будут - [1, 1, 1, ....., 1]
-
-Код для проверки:
-"""
-
 
 circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
 cube1 = Cube((222, 35, 130), 6)
@@ -223,13 +169,4 @@ print(len(circle1))
 # Проверка объёма (куба):
 print(cube1.get_volume())
 
-"""
-Выходные данные (консоль):
-[55, 66, 77]
-[222, 35, 130]
-[6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
-[15]
-15
-216
-"""
 #eof-module6hard.py
